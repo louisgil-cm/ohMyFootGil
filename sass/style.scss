@@ -1,106 +1,23 @@
 body {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
   display: flex;
   align-items: center;
   justify-content: center;
-$background-color: linear-gradient(to right, #FF79DA, #9356DC);
-$spinner-color: #3498db;
+  $background-color: linear-gradient(to right, #FF79DA, #9356DC);
+  $spinner-color: #3498db;
 
-
-// Styles de l'écran de chargement
-.loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: $background-color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  animation: fadeOut 5s forwards; // Fade out après 5 secondes
-}
-
-// Styles du spinner
-.spinner {
-  border: 16px solid #f3f3f3; /* Couleur de fond */
-  border-top: 16px solid $spinner-color; /* Couleur du spinner */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 1.5s linear infinite;
-}
-
-// Animation du spinner
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-// Animation de disparition de l'écran de chargement
-@keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; display: none;}
-  
-}
-
-// Styles du contenu
-.content {
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in 5s forwards; // Fade in après 5 secondes de chargement
-}
-// Style du message de chargement
-.loading-message {
-  margin-top: -200px;
-  margin-left: -130px;
-  font-size: 1.6em;
-  font-weight: bold;
-  color: black;
-}
-.chargement{
-  margin-bottom: -170px;
-  margin-left: -160px;
-  font-size: 1.3em;
-  font-weight: bold;
-  color: black;
-  
-
-}
-
-
-// Animation d'apparition du contenu
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-  .main-content {
-    opacity: 0;
-    animation: fadeIn 0.5s ease-in 5s forwards;
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .header {
-    &__nav {
+  header {
+    .header__nav {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
-      &__logo {
-        gap: 10px;
-      }
-
-      &__choixVille {
+      .header__nav__choixVille {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -128,122 +45,234 @@ $spinner-color: #3498db;
           color: black;
 
         }
-
       }
     }
 
-    &__FonctionnementReservation {
+    .header__FonctionnementReservation {
       display: flex;
-      background-color: white;
+      background-color: green;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       width: 100%;
 
-      h1 {
-        margin-bottom: 20px;
-        font-size: 30px;
-
-      }
-
-      p {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 25px;
-        color: #666;
-      }
-
-      button {
-        display: inline-block;
-        padding: 15px 30px;
-        font-size: 16px;
-        color: white;
-        background: linear-gradient(to right, #FF79DA, #9356DC);
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-        text-decoration: none;
-        transition-property: transform;
-        transform: scale(1);
-      }
-
-      button:hover {
-        transform: scale(1.15);
-        box-shadow: 0px 0px 35px #99E2D0;
-        transform: scale(1.2);
-        transition-duration: 2s;
-
-      }
-
-    }
-
-    &__FonctionnementReservation__Reservation {
-      width: 50%;
-      background-color: #f2f2f2;
-      text-align: center;
-    }
-    
-
-    &__FonctionnementReservation__Fonctionnement {
-      width: 50%;
-      background: #fff;
-
-      h2 {
-        margin-bottom: 20px;
-        font-size: 20px;
-        margin-left: 10%;
-        font-size: 30px;
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-      }
-
-      & ul li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-        font-size: 16px;
-        color: #333;
+      .header__FonctionnementReservation__Reservation {
+        width: 50%;
         background-color: #f2f2f2;
-        padding: 15px;
-        border-radius: 15px;
-        width: 300px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        font-size: 25px;
-      }
-
-      ul li:hover {
-        transform: scale(1.05);
-        box-shadow: 0px 0px 35px #99E2D0;
-      }
-
-      ul li .number {
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        margin-left: -10%;
-        background-color: #a987e7;
-        color: white;
-        border-radius: 50%;
         text-align: center;
-        line-height: 30px;
-        font-weight: bold;
+
+        h1 {
+          margin-bottom: 20px;
+          font-size: 30px;
+
+        }
+
+        p {
+          text-align: center;
+          margin-bottom: 40px;
+          font-size: 25px;
+          color: #666;
+        }
+
+        button {
+          display: inline-block;
+          padding: 15px 30px;
+          font-size: 16px;
+          color: white;
+          background: linear-gradient(to right, #FF79DA, #9356DC);
+          border: none;
+          border-radius: 25px;
+          cursor: pointer;
+          text-decoration: none;
+          transition-property: transform;
+          transform: scale(1);
+        }
+
+        button:hover {
+          transform: scale(1.15);
+          box-shadow: 0px 0px 35px #99E2D0;
+          transform: scale(1.2);
+          transition-duration: 2s;
+
+        }
+
       }
 
-      ul li .text {
-        margin-left: 10px;
+      .header__FonctionnementReservation__Fonctionnement {
+        width: 50%;
+        background: #fff;
+
+        h2 {
+          margin-bottom: 20px;
+          font-size: 20px;
+          margin-left: 10%;
+          font-size: 30px;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #333;
+            background-color: #f2f2f2;
+            padding: 15px;
+            border-radius: 15px;
+            width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+
+            .number {
+              display: inline-block;
+              width: 30px;
+              height: 30px;
+              margin-left: -10%;
+              background-color: #a987e7;
+              color: white;
+              border-radius: 50%;
+              text-align: center;
+              line-height: 30px;
+              font-weight: bold;
+            }
+
+            .text {
+              margin-left: 10px;
+            }
+          }
+
+          li:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 35px #99E2D0;
+          }
+
+        }
       }
+
+    }
+
+  }
+
+
+
+  // Styles de l'écran de chargement
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 5s forwards; // Fade out après 5 secondes
+  }
+
+  // Styles du spinner
+  .spinner {
+    border: 16px solid #f3f3f3;
+    /* Couleur de fond */
+    border-top: 16px solid $spinner-color;
+    /* Couleur du spinner */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1.5s linear infinite;
+  }
+
+  // Animation du spinner
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  // Animation de disparition de l'écran de chargement
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      display: none;
+    }
+
+  }
+
+  // Styles du contenu
+  .content {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in 5s forwards; // Fade in après 5 secondes de chargement
+  }
+
+  // Style du message de chargement
+  .loading-message {
+    margin-top: -200px;
+    margin-left: -130px;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: black;
+  }
+
+  .chargement {
+    margin-bottom: -170px;
+    margin-left: -160px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: black;
+
+
+  }
+
+
+  // Animation d'apparition du contenu
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .main-content {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in 5s forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
     }
   }
 
   main {
     background-color: #f2f2f2;
+    overflow: hidden;
+
+    h1 {
+      margin-left: 4%;
+      font-weight: bold;
+      font-size: 2rem;
+    }
 
     .restaurantSection__galery {
       width: 100%;
@@ -269,6 +298,20 @@ $spinner-color: #3498db;
           display: flex;
           flex-direction: column;
           position: relative;
+
+          .restaurants__me_nu_nouveau {
+            position: absolute;
+            background-color: #99E2D0;
+            /* Vert clair */
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: -120px;
+            margin-top: 10px;
+            left: 100%;
+          }
 
           .text {
             display: flex;
@@ -299,6 +342,7 @@ $spinner-color: #3498db;
     background-color: black;
     font-weight: 400;
     padding: 40px;
+    overflow: hidden;
 
     h1 {
       color: white;
@@ -348,8 +392,10 @@ $spinner-color: #3498db;
       width: 100%;
       height: 100%;
       background: linear-gradient(to top, #ff6699, #8a2be2); // Dégradé du violet au rose
-      -webkit-text-fill-color: transparent; /* Important pour que le texte ne soit pas visible autrement */
-      background-clip: text; /* Propriété standard */
+      -webkit-text-fill-color: transparent;
+      /* Important pour que le texte ne soit pas visible autrement */
+      background-clip: text;
+      /* Propriété standard */
       color: transparent;
       clip-path: inset(100% 0 0 0);
       transition: clip-path 0.2s ease-in-out;
@@ -364,56 +410,68 @@ $spinner-color: #3498db;
 
 
 @media screen and (max-width:300px) {
- 
-  body main .restaurantSection__galery a{
-    width: 100%;
+
+  body main .restaurantSection__galery a {
+    width: 90%;
   }
-  }
+}
 
 
 
 @media screen and (max-width: 992px) {
 
-  .header__FonctionnementReservation{
+  .header__FonctionnementReservation {
     flex-direction: column;
-   
+
   }
-  .header__FonctionnementReservation__Reservation{
-    width: 100% !important;
-  }
-  .header__FonctionnementReservation__Fonctionnement{
+
+  .header__FonctionnementReservation__Reservation {
     width: 100% !important;
   }
 
-  body main .restaurantSection__galery a{
+  .header__FonctionnementReservation__Fonctionnement {
+    width: 100% !important;
+  }
+
+  body main .restaurantSection__galery a {
     width: 100%;
 
- 
+
   }
-  }
-   
+
+}
+
 @media screen and (max-width: 500px) {
-  body{
+  body {
     margin: 0;
   }
 
-  .header__FonctionnementReservation{
+  .header__FonctionnementReservation {
     flex-direction: column;
-   
+
   }
-  .header__FonctionnementReservation__Reservation{
+
+  .header__FonctionnementReservation__Reservation {
     width: 100% !important;
   }
-  .header__FonctionnementReservation__Fonctionnement{
+
+  .header__FonctionnementReservation__Fonctionnement {
     width: 100% !important;
   }
-  .restaurantSection__galery{
+
+  .restaurantSection__galery {
     margin: -20px;
   }
-  body main .restaurantSection__galery a{
+
+  body main .restaurantSection__galery a {
     width: 100%;
   }
-   
+
+  footer {
+    background-color: red !important;
+
+
+  }
 
 
 
@@ -421,77 +479,94 @@ $spinner-color: #3498db;
 
 
   .container {
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
-  .right, .left{
-      width: 100%;
-      padding: 0px;
+
+  .right,
+  .left {
+    width: 100%;
+    padding: 0px;
   }
-  .restaurants-nouveau, .restaurants-simple{
-      width: 100%;
+
+  .restaurants-nouveau,
+  .restaurants-simple {
+    width: 100%;
   }
-  .explore-btn{
-      margin-bottom: 20px;
+
+  .explore-btn {
+    margin-bottom: 20px;
   }
-  footer{
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      justify-content: center;
-      padding: 0px;
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 0px;
   }
-  footer nav ul{
-      display: flex;
+
+  footer nav ul {
+    display: flex;
     flex-direction: column;
     gap: 10px;
     padding-right: 0px;
 
   }
-  footer h1{
-      margin-left: 20px;
-  }
-  
 
+  footer h1 {
+    margin-left: 20px;
   }
+
+
+}
 
 
 @media screen and (max-width: 992px) {
 
   .container {
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
-  .right, .left{
-      width: 100%;
-      padding: 0px;
+
+  .right,
+  .left {
+    width: 100%;
+    padding: 0px;
   }
-  .right h2{
-      margin-left: 37%;
+
+  .right h2 {
+    margin-left: 37%;
   }
-  .restaurants-nouveau, .restaurants-simple{
-      width: 100%;
+
+  .restaurants-nouveau,
+  .restaurants-simple {
+    width: 100%;
   }
-  .explore-btn{
-      margin-bottom: 20px;
+
+  .explore-btn {
+    margin-bottom: 20px;
   }
-  footer{
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      justify-content: center;
-      padding: 0px;
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 0px;
   }
-  footer nav ul{
-      display: flex;
+
+  footer nav ul {
+    display: flex;
     flex-direction: column;
     gap: 10px;
     padding-right: 0px;
 
   }
-  footer h1{
-      margin-left: 20px;
-  }
-  
 
+  footer h1 {
+    margin-left: 20px;
   }
+
+
+}
