@@ -1,10 +1,10 @@
 body {
- 
-  // Fichier styles.scss
-
-// Définir les couleurs
+  display: flex;
+  align-items: center;
+  justify-content: center;
 $background-color: linear-gradient(to right, #FF79DA, #9356DC);
 $spinner-color: #3498db;
+
 
 // Styles de l'écran de chargement
 .loading-screen {
@@ -363,17 +363,10 @@ $spinner-color: #3498db;
 
 
 
-@media screen and (max-width: 550px) {
-
-  #right__title{
-      margin-left: 20%;
-  }
-  }
-
-@media screen and (max-width: 600px) {
-
-  #right__title{
-      margin-left: 20%;
+@media screen and (max-width:300px) {
+ 
+  body main .restaurantSection__galery a{
+    width: 100%;
   }
   }
 
@@ -391,12 +384,18 @@ $spinner-color: #3498db;
   .header__FonctionnementReservation__Fonctionnement{
     width: 100% !important;
   }
+
   body main .restaurantSection__galery a{
     width: 100%;
+
+ 
   }
   }
    
 @media screen and (max-width: 500px) {
+  body{
+    margin: 0;
+  }
 
   .header__FonctionnementReservation{
     flex-direction: column;
@@ -407,6 +406,9 @@ $spinner-color: #3498db;
   }
   .header__FonctionnementReservation__Fonctionnement{
     width: 100% !important;
+  }
+  .restaurantSection__galery{
+    margin: -20px;
   }
   body main .restaurantSection__galery a{
     width: 100%;

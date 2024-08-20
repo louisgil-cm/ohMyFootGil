@@ -1,4 +1,9 @@
 @charset "UTF-8";
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 body .loading-screen {
   position: fixed;
   top: 0;
@@ -299,14 +304,9 @@ body footer .footer__nav ul li a {
   clip-path: inset(0 0 0 0);
 }
 
-@media screen and (max-width: 550px) {
-  #right__title {
-    margin-left: 20%;
-  }
-}
-@media screen and (max-width: 600px) {
-  #right__title {
-    margin-left: 20%;
+@media screen and (max-width: 300px) {
+  body main .restaurantSection__galery a {
+    width: 100%;
   }
 }
 @media screen and (max-width: 992px) {
@@ -324,6 +324,9 @@ body footer .footer__nav ul li a {
   }
 }
 @media screen and (max-width: 500px) {
+  body {
+    margin: 0;
+  }
   .header__FonctionnementReservation {
     flex-direction: column;
   }
@@ -332,6 +335,9 @@ body footer .footer__nav ul li a {
   }
   .header__FonctionnementReservation__Fonctionnement {
     width: 100% !important;
+  }
+  .restaurantSection__galery {
+    margin: -20px;
   }
   body main .restaurantSection__galery a {
     width: 100%;
