@@ -59,7 +59,7 @@ body main .menu .cadre h2::after {
   left: 0;
   bottom: -0.2em; /* Ajuster cette valeur pour positionner la ligne correctement */
   width: 20%;
-  height: 0.1em; /* Épaisseur de la ligne */
+  height: 0.06em; /* Épaisseur de la ligne */
   background-color: #00c5c7; /* Couleur de la ligne */
   transform: scaleX(1); /* La ligne est toujours visible */
   transform-origin: bottom left;
@@ -96,11 +96,17 @@ body main .menu .cadre .menu-item .full .prix .price {
   color: #333;
   text-align: right;
   margin: 1% 3% 0px 0px;
+  transform: translate(10%);
+}
+body main .menu .cadre .menu-item .full .prix .price:hover {
+  transform: translate(-80%);
+  background-color: yellow;
 }
 body main .menu .cadre .menu-item .none {
   background-color: #99E2D0;
   color: white;
   transform: translateX(100%);
+  transition: ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,7 +119,7 @@ body main .menu .cadre .menu-item .none {
   padding-right: 20px;
 }
 body main .menu .cadre .menu-item .full:hover + .none {
-  transition: ease-in-out;
+  transition: ease-in;
   margin-left: -60px;
   transform: translateX(0);
 }
