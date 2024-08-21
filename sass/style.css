@@ -45,7 +45,6 @@ body header .header__FonctionnementReservation {
 }
 body header .header__FonctionnementReservation .header__FonctionnementReservation__Reservation {
   width: 50%;
-  background-color: #11d14b;
   text-align: center;
 }
 body header .header__FonctionnementReservation .header__FonctionnementReservation__Reservation h1 {
@@ -215,7 +214,6 @@ body main .restaurantSection__galery {
   width: 100%;
   display: flex;
   gap: 10px;
-  background-color: #f2f2f2;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -227,7 +225,6 @@ body main .restaurantSection__galery a {
   border: 1px solid #ddd;
   border-radius: 20px;
   margin: 10px;
-  background-color: white;
 }
 body main .restaurantSection__galery a .image {
   display: flex;
@@ -327,34 +324,54 @@ body footer .footer__nav ul li a {
     font-size: 12px;
   }
   .header__FonctionnementReservation__Reservation {
-    margin: 0px 20px 0 20px;
-    width: 100% !important;
+    margin-left: 115px !important;
     display: flex;
-    font-size: 12px;
+  }
+  .header__nav {
+    width: 40% !important;
+    margin-left: 110px !important;
+  }
+  .header__FonctionnementReservation__Reservation h1 {
+    font-size: 16px !important;
+    width: 90% !important;
+    margin-left: 10px !important;
+  }
+  p {
+    font-size: 16px !important;
+    width: 90% !important;
+    margin-left: 10px !important;
+  }
+  .header__FonctionnementReservation__Fonctionnement ul li {
+    width: 70% !important;
+    background-color: #3700ff !important;
+    font-size: 10px !important;
+  }
+  .header__FonctionnementReservation button {
+    width: 200px !important;
+    margin-left: 25px !important;
+    font-size: 12px !important;
+  }
+  .header__nav {
+    width: 50% !important;
+  }
+  input {
+    border: none;
+    width: 100% !important;
   }
   .header__FonctionnementReservation__Fonctionnement {
-    width: 100% !important;
+    width: 50% !important;
+    font-size: 2px !important;
+    margin-left: 110px !important;
   }
-}
-@media only screen and (max-width: 480px) {
-  .header__FonctionnementReservation {
-    width: 100% !important;
-    flex-direction: column;
-    font-size: 12px;
-  }
-  .header__FonctionnementReservation__Reservation {
-    color: green;
-    font-size: 12px;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .header__FonctionnementReservation {
-    flex-direction: column;
-    font-size: 12px;
+  .main__restaurantSection {
+    background-color: blue !important;
+    padding-left: 70px !important;
+    padding-right: 20px !important;
+    width: 60% !important;
   }
   footer {
-    background-color: #8400ff !important;
-    width: 80% !important;
+    width: 60% !important;
+    margin-left: 10px !important;
   }
 }
 @media only screen and (max-width: 762px) {
@@ -364,16 +381,9 @@ body footer .footer__nav ul li a {
   }
   .header__FonctionnementReservation__Reservation {
     margin: 0px 20px 0 20px;
-    width: 90% !important;
     display: flex;
     flex-direction: column;
     font-size: 12px;
-  }
-  .header__FonctionnementReservation__Fonctionnement {
-    width: 100% !important;
-  }
-  .header__FonctionnementReservation__Fonctionnement ul li {
-    width: 80% !important;
   }
   .header__nav {
     width: 90%;
