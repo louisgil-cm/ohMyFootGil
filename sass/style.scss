@@ -50,11 +50,8 @@ body {
 
     .header__FonctionnementReservation {
       display: flex;
-      background-color: green;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
       width: 100%;
-
       .header__FonctionnementReservation__Reservation {
         width: 50%;
         background-color: #f2f2f2;
@@ -118,6 +115,7 @@ body {
 
           li {
             display: flex;
+            gap: 5px;
             align-items: center;
             margin-bottom: 20px;
             font-size: 16px;
@@ -266,7 +264,6 @@ body {
 
   main {
     background-color: #f2f2f2;
-    overflow: hidden;
 
     h1 {
       margin-left: 4%;
@@ -283,7 +280,6 @@ body {
       justify-content: center;
       align-items: center;
       margin: 0px 5px 10px 5px;
-      padding: 40px;
       box-sizing: border-box;
 
       a {
@@ -342,7 +338,6 @@ body {
     background-color: black;
     font-weight: 400;
     padding: 40px;
-    overflow: hidden;
 
     h1 {
       color: white;
@@ -419,6 +414,16 @@ body {
 
 
 @media screen and (max-width: 992px) {
+  body header .header__nav .header__nav__choixVille {
+    margin-left: 10px;
+    margin-right: 20px;
+    width: 90%;
+  }ol
+  .main__restaurantSection h1{
+    display: flex ;
+    align-items: start;
+    justify-content: start;
+    }
 
   .header__FonctionnementReservation {
     flex-direction: column;
@@ -426,11 +431,24 @@ body {
   }
 
   .header__FonctionnementReservation__Reservation {
-    width: 100% !important;
+    margin-left: 18px;
+    margin-right: 25px;
+    padding-bottom: 18px;
+    width: 93% !important;
   }
 
   .header__FonctionnementReservation__Fonctionnement {
     width: 100% !important;
+  }
+  .header__FonctionnementReservation__Fonctionnement h2 {
+      display: flex ;
+      align-items: start;
+      justify-content: start;
+  }
+  .header__FonctionnementReservation__Fonctionnement ul li{
+    width: 60% !important;
+    align-items: center;
+    justify-content: center;
   }
 
   body main .restaurantSection__galery a {
@@ -445,19 +463,24 @@ body {
   body {
     margin: 0;
   }
-
+    
   .header__FonctionnementReservation {
     flex-direction: column;
+    
 
   }
 
   .header__FonctionnementReservation__Reservation {
     width: 100% !important;
+    padding-bottom: 20px;
   }
 
   .header__FonctionnementReservation__Fonctionnement {
     width: 100% !important;
+    
   }
+ 
+
 
   .restaurantSection__galery {
     margin: -20px;

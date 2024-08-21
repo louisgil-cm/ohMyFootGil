@@ -41,9 +41,7 @@ body header .header__nav .header__nav__choixVille input::placeholder {
 }
 body header .header__FonctionnementReservation {
   display: flex;
-  background-color: green;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   width: 100%;
 }
 body header .header__FonctionnementReservation .header__FonctionnementReservation__Reservation {
@@ -100,6 +98,7 @@ body header .header__FonctionnementReservation .header__FonctionnementReservatio
 }
 body header .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li {
   display: flex;
+  gap: 5px;
   align-items: center;
   margin-bottom: 20px;
   font-size: 16px;
@@ -210,7 +209,6 @@ body .main-content {
 }
 body main {
   background-color: #f2f2f2;
-  overflow: hidden;
 }
 body main h1 {
   margin-left: 4%;
@@ -226,7 +224,6 @@ body main .restaurantSection__galery {
   justify-content: center;
   align-items: center;
   margin: 0px 5px 10px 5px;
-  padding: 40px;
   box-sizing: border-box;
 }
 body main .restaurantSection__galery a {
@@ -275,7 +272,6 @@ body footer {
   background-color: black;
   font-weight: 400;
   padding: 40px;
-  overflow: hidden;
 }
 body footer h1 {
   color: white;
@@ -335,14 +331,37 @@ body footer .footer__nav ul li a {
   }
 }
 @media screen and (max-width: 992px) {
+  body header .header__nav .header__nav__choixVille {
+    margin-left: 10px;
+    margin-right: 20px;
+    width: 90%;
+  }
+  ol .main__restaurantSection h1 {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+  }
   .header__FonctionnementReservation {
     flex-direction: column;
   }
   .header__FonctionnementReservation__Reservation {
-    width: 100% !important;
+    margin-left: 18px;
+    margin-right: 25px;
+    padding-bottom: 18px;
+    width: 93% !important;
   }
   .header__FonctionnementReservation__Fonctionnement {
     width: 100% !important;
+  }
+  .header__FonctionnementReservation__Fonctionnement h2 {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+  }
+  .header__FonctionnementReservation__Fonctionnement ul li {
+    width: 60% !important;
+    align-items: center;
+    justify-content: center;
   }
   body main .restaurantSection__galery a {
     width: 100%;
@@ -357,6 +376,7 @@ body footer .footer__nav ul li a {
   }
   .header__FonctionnementReservation__Reservation {
     width: 100% !important;
+    padding-bottom: 20px;
   }
   .header__FonctionnementReservation__Fonctionnement {
     width: 100% !important;
