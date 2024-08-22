@@ -9,7 +9,7 @@ body header nav {
   flex-direction: column;
 }
 body header nav img {
-  color: white;
+  background-color: red;
 }
 body header nav .header__nav__choixVille {
   display: flex;
@@ -18,31 +18,27 @@ body header nav .header__nav__choixVille {
   gap: 10px;
   margin-top: 20px;
 }
-body header nav .header__nav__choixVille input {
+body header nav .header__nav__choixVille h1 {
+  display: inline;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
-body header nav .header__nav__choixVille input::after {
+body header nav .header__nav__choixVille h1::after {
   content: "";
   position: absolute;
+  top: 0;
   left: 0;
-  bottom: -0.2em; /* Ajuster cette valeur pour positionner la ligne correctement */
-  width: 20%;
-  height: 0.06em; /* Épaisseur de la ligne */
-  background-color: #00c5c7; /* Couleur de la ligne */
-  transform: scaleX(1); /* La ligne est toujours visible */
-  transform-origin: bottom left;
+  width: 30vw; /* La ligne commence par occuper toute la largeur de l'écran */
+  height: 2px; /* Épaisseur de la ligne */
+  background-color: #d3d3d3; /* Couleur de la ligne */
 }
 body .header__FonctionnementReservation {
   display: flex;
 }
 body .header__FonctionnementReservation .header__FonctionnementReservation__Reservation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   color: green;
   width: 50%;
   background-color: blanchedalmond;
@@ -75,7 +71,7 @@ body .header__FonctionnementReservation .header__FonctionnementReservation__Fonc
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90%;
+  width: 10%;
   gap: 10px;
   padding: 20px;
   margin-bottom: 20px;
@@ -83,6 +79,7 @@ body .header__FonctionnementReservation .header__FonctionnementReservation__Fonc
   background-color: #f2f2f2;
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 90%;
 }
 body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li .number {
   display: inline-block;
@@ -420,6 +417,7 @@ footer nav ul li a {
   .header__FonctionnementReservation__Reservation {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-color: aqua;
     text-align: center;

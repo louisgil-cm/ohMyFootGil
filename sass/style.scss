@@ -10,7 +10,7 @@ body{
       justify-content: center;
       flex-direction: column;
       img{
-        color: white;
+        background-color: red;
       }
       
       .header__nav__choixVille{
@@ -19,24 +19,23 @@ body{
         justify-content: center;
         gap: 10px;
         margin-top: 20px;
-        input{
+        h1{
+          display: inline;
           position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
-         
           width: 100%;
         }
-        input::after{
-          content: '';
+        h1::after{
+          content: "";
           position: absolute;
+          top: 0;
           left: 0;
-          bottom: -0.2em; /* Ajuster cette valeur pour positionner la ligne correctement */
-          width: 20%;
-          height: 0.06em; /* Épaisseur de la ligne */
-          background-color: #00c5c7; /* Couleur de la ligne */
-          transform: scaleX(1); /* La ligne est toujours visible */
-          transform-origin: bottom left;
+          width: 30vw; /* La ligne commence par occuper toute la largeur de l'écran */
+          height: 2px; /* Épaisseur de la ligne */
+          background-color: #d3d3d3; /* Couleur de la ligne */
+         
       }
         
        }
@@ -45,14 +44,10 @@ body{
       .header__FonctionnementReservation{
         display: flex;
         .header__FonctionnementReservation__Reservation{
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+        color: green;
+        width: 50%;
+        background-color: blanchedalmond;
        
-          color: green;
-          width: 50%;
-          background-color: blanchedalmond;
-        
         button{
             display: inline-block;
             padding: 20px;
@@ -80,7 +75,7 @@ body{
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 90%;
+            width: 10%;
             gap: 10px;
             padding: 20px;
             margin-bottom: 20px;
@@ -88,6 +83,7 @@ body{
             background-color: #f2f2f2;
             border-radius: 15px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 90%;
             .number {
                 display: inline-block;
                 width: 30px;
@@ -461,7 +457,6 @@ header{
   align-items: center;
   background-color: #1eff00;
   text-align: center;
-  
 }
 .header__FonctionnementReservation__Fonctionnement ul li{
   margin-left:-37px  ;
@@ -483,7 +478,7 @@ footer{
 .header__FonctionnementReservation__Reservation{
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
   align-items: center;
   background-color: aqua;
   text-align: center;
