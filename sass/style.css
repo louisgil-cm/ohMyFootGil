@@ -1,26 +1,81 @@
+@charset "UTF-8";
 body a {
   text-decoration: none;
 }
-body header nav img .header__nav__choixVille {
-  color: red;
+body header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-body header .header__FonctionnementReservation .header__FonctionnementReservation__Reservation {
-  color: green;
-}
-body header .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement {
-  color: black;
-}
-body header .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement h2 {
+body header nav img {
   color: white;
 }
-body header .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul {
-  color: white;
+body header nav .header__nav__choixVille {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
 }
-body header .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li {
+body header nav .header__nav__choixVille input {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+body header nav .header__nav__choixVille input::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2em; /* Ajuster cette valeur pour positionner la ligne correctement */
+  width: 20%;
+  height: 0.06em; /* Épaisseur de la ligne */
+  background-color: #00c5c7; /* Couleur de la ligne */
+  transform: scaleX(1); /* La ligne est toujours visible */
+  transform-origin: bottom left;
+}
+body .header__FonctionnementReservation {
+  display: flex;
+}
+body .header__FonctionnementReservation .header__FonctionnementReservation__Reservation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: green;
+  width: 50%;
+  background-color: blanchedalmond;
+}
+body .header__FonctionnementReservation .header__FonctionnementReservation__Reservation button {
+  display: inline-block;
+  padding: 20px;
+  font-size: 12px;
+  color: white;
+  background: linear-gradient(to right, #FF79DA, #9356DC);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  transition-property: transform;
+  transform: scale(1);
+}
+body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement {
+  width: 50%;
+  background-color: red;
+  color: black;
+}
+body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement h2 {
+  color: white;
+}
+body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul {
+  color: white;
+}
+body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
   gap: 10px;
   padding: 20px;
   margin-bottom: 20px;
@@ -29,7 +84,7 @@ body header .header__FonctionnementReservation .header__FonctionnementReservatio
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-body header .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li .number {
+body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li .number {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -41,21 +96,30 @@ body header .header__FonctionnementReservation .header__FonctionnementReservatio
   line-height: 30px;
   font-weight: bold;
 }
-body main .main__restaurantSection .restaurantSection__galery {
+
+main .main__restaurantSection .restaurantSection__galery {
   display: flex;
   gap: 10px;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
-body main .main__restaurantSection .restaurantSection__galery a {
+main .main__restaurantSection .restaurantSection__galery a {
+  display: block;
   border: 1px solid #ddd;
   border-radius: 20px;
+  width: calc(50% - 10px);
 }
-body main .main__restaurantSection .restaurantSection__galery a .image img {
+main .main__restaurantSection .restaurantSection__galery a .image {
+  position: relative;
+}
+main .main__restaurantSection .restaurantSection__galery a .image img {
+  width: 100%;
+  height: 250px;
   object-fit: cover;
+  position: relative;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-body main .main__restaurantSection .restaurantSection__galery a .image span {
+main .main__restaurantSection .restaurantSection__galery a .image span {
   position: absolute;
   background-color: #99E2D0;
   color: black;
@@ -67,11 +131,56 @@ body main .main__restaurantSection .restaurantSection__galery a .image span {
   margin-top: 10px;
   left: 100%;
 }
-body main .main__restaurantSection .restaurantSection__galery a .image .text {
+main .main__restaurantSection .restaurantSection__galery a .image .text {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0px 5px 0px 5px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+}
+footer nav ul {
+  list-style: none;
+}
+footer nav ul li a {
+  color: white;
+}
+
+.heart-container {
+  display: inline-block;
+  font-size: 50px;
+  position: relative;
+}
+.heart-container .fa-heart {
+  color: #2e2c2c;
+  position: relative;
+  display: inline-block;
+  font-size: 35px;
+  transition: color 0.2s ease-in-out;
+}
+.heart-container .fa-heart:after {
+  content: "\f004";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #ff6699, #8a2be2);
+  -webkit-text-fill-color: transparent;
+  /* Important pour que le texte ne soit pas visible autrement */
+  background-clip: text;
+  /* Propriété standard */
+  color: transparent;
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 0.2s ease-in-out;
+}
+.heart-container:hover .fa-heart:after {
+  clip-path: inset(0 0 0 0);
 }
 
 @media only screen and (max-width: 320px) {
@@ -91,6 +200,9 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
   footer {
     background-color: blue;
   }
+  .header__FonctionnementReservation {
+    flex-direction: column !important;
+  }
   .header__FonctionnementReservation__Reservation {
     display: flex;
     flex-direction: column;
@@ -98,19 +210,7 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
     align-items: center;
     background-color: aqua;
     text-align: center;
-  }
-  .header__FonctionnementReservation__Reservation button {
-    display: inline-block;
-    padding: 20px;
-    font-size: 12px;
-    color: white;
-    background: linear-gradient(to right, #FF79DA, #9356DC);
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    text-decoration: none;
-    transition-property: transform;
-    transform: scale(1);
+    width: 100% !important;
   }
   .header__FonctionnementReservation__Fonctionnement {
     display: flex;
@@ -119,12 +219,14 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
     align-items: center;
     background-color: #1eff00;
     text-align: center;
+    width: 100% !important;
   }
   .header__FonctionnementReservation__Fonctionnement ul li {
     margin-left: -37px;
     background-color: red !important;
     font-size: 100px;
     font-size: 16px;
+    width: 100% !important;
   }
   .number {
     margin-left: -40px !important;
@@ -134,10 +236,11 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
   }
   .restaurantSection__galery {
     background-color: antiquewhite;
+    flex-direction: column;
   }
   .restaurantSection__galery a {
     display: block;
-    width: 100%;
+    width: 100% !important;
     background-color: yellow;
     border: solid 1px black;
   }
@@ -162,6 +265,9 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
   footer {
     background-color: blue;
   }
+  .header__FonctionnementReservation {
+    flex-direction: column;
+  }
   .header__FonctionnementReservation__Reservation {
     display: flex;
     flex-direction: column;
@@ -169,6 +275,7 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
     align-items: center;
     background-color: aqua;
     text-align: center;
+    width: 100 !important;
   }
   .header__FonctionnementReservation__Fonctionnement {
     display: flex;
@@ -177,12 +284,14 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
     align-items: center;
     background-color: #1eff00;
     text-align: center;
+    width: 100% !important;
   }
   .header__FonctionnementReservation__Fonctionnement ul li {
     margin-left: -37px;
     background-color: red !important;
     font-size: 100px;
     font-size: 16px;
+    width: 100% !important;
   }
   .number {
     margin-left: -40px !important;
@@ -192,10 +301,11 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
   }
   .restaurantSection__galery {
     background-color: antiquewhite;
+    flex-direction: column;
   }
   .restaurantSection__galery a {
     display: block;
-    width: 100%;
+    width: 100% !important;
     background-color: yellow;
     border: solid 1px black;
   }
@@ -220,6 +330,9 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
   footer {
     background-color: blue;
   }
+  .header__FonctionnementReservation {
+    flex-direction: column;
+  }
   .header__FonctionnementReservation__Reservation {
     display: flex;
     flex-direction: column;
@@ -227,6 +340,7 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
     align-items: center;
     background-color: #09ff00;
     text-align: center;
+    width: 100% !important;
   }
   .header__FonctionnementReservation__Fonctionnement {
     display: flex;
@@ -235,12 +349,14 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
     align-items: center;
     background-color: #1eff00;
     text-align: center;
+    width: 100% !important;
   }
   .header__FonctionnementReservation__Fonctionnement ul li {
     margin-left: -35px;
     background-color: red !important;
     font-size: 100px;
     font-size: 16px;
+    width: 100% !important;
   }
   .number {
     margin-left: -40px !important;
@@ -250,10 +366,11 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
   }
   .restaurantSection__galery {
     background-color: antiquewhite;
+    flex-direction: column;
   }
   .restaurantSection__galery a {
     display: block;
-    width: 100%;
+    width: 100% !important;
     background-color: yellow;
     border: solid 1px black;
   }
@@ -274,7 +391,7 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
     flex-direction: column;
   }
   .header__FonctionnementReservation {
-    width: 100%;
+    width: 100% !important;
   }
   .header__FonctionnementReservation__Fonctionnement {
     display: flex;
@@ -289,6 +406,7 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
     background-color: red !important;
     font-size: 100px;
     font-size: 16px;
+    width: 100% !important;
   }
   .number {
     margin-left: -40px !important;
@@ -302,7 +420,6 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
   .header__FonctionnementReservation__Reservation {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: aqua;
     text-align: center;
@@ -315,11 +432,12 @@ body main .main__restaurantSection .restaurantSection__galery a .image .text {
   }
   .restaurantSection__galery a {
     display: block;
-    width: 100%;
+    width: 100% !important;
     background-color: yellow;
     border: solid 1px black;
   }
   .main__restaurantSection a img {
     width: 100%;
+    height: 30vh;
   }
 }/*# sourceMappingURL=style.css.map */
