@@ -89,7 +89,7 @@ html{
                         display: flex;
                         flex-direction: column;
                         gap: 20px;
-                        flex: 1; 
+                        opacity: 0;
                         animation: fadeInColumn 0.5s forwards;
                         animation-delay: calc(0.5s * 3 * var(--i)); 
                         .menu-item1, .menu-item2, .menu-item3{
@@ -100,6 +100,10 @@ html{
                             width: 100%;
                             padding-left: 10px;
                             flex: 1; 
+                            opacity: 0;
+                            transform: translateY(-20px);
+                            animation: fadeInChild 0.5s forwards;
+                            animation-delay: calc(0.5s * var(--j) + 0.5s * 3 * var(--i));
                             .divUn{
                                 display: flex;
                                 flex-direction: column;
@@ -162,7 +166,7 @@ html{
                             }
                             &:hover i{
                                 display: block;
-                               animation: apparition 0.7s 1 linear;
+                                animation: apparition 0.7s 1 ease-in-out;
                             }
                           
 
@@ -170,13 +174,13 @@ html{
                          
                     }
                     .column1{
-                      --i: 0;
+                      --i: 2;
                     }
                     .column2{
                       --i: 1;
                     }
                     .column3{
-                      --i: 2;
+                      --i: 0;
                     }
 
                 }
@@ -311,44 +315,37 @@ html{
     }
   } 
 
-.chld{
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: fadeInChild 0.5s forwards;
-
-  animation-delay: calc(0.5s * var(--j) + 0.5s * 3 * var(--i));
-}
 
    .menu-item1__child1{
-    --j: 0;
+    --j: 2;
    }
   .menu-item1__child2{
     --j: 1;
   }
   .menu-item1__child3{
-    --j: 2;
+    --j: 0;
   }
 
 
   .menu-item2__child1{
-    --j: 0;
+    --j: 2;
   }
   .menu-item2__child2{
     --j: 1;
   }
   .menu-item2__child3{
-    --j: 2;
+    --j: 0;
   }
 
 
   .menu-item3__child1{
-    --j: 0;
+    --j: 2;
   }
   .menu-item3__child2{
     --j: 1;
   }
   .menu-item3__child3{
-    --j: 2;
+    --j: 0;
   }
 
 

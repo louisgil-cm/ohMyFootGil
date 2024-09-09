@@ -83,7 +83,7 @@ html body main .menu-container .c .column1, html body main .menu-container .c .c
   display: flex;
   flex-direction: column;
   gap: 20px;
-  flex: 1;
+  opacity: 0;
   animation: fadeInColumn 0.5s forwards;
   animation-delay: calc(1.5s * var(--i));
 }
@@ -95,6 +95,10 @@ html body main .menu-container .c .column1 .menu-item1, html body main .menu-con
   width: 100%;
   padding-left: 10px;
   flex: 1;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInChild 0.5s forwards;
+  animation-delay: calc(0.5s * var(--j) + 1.5s * var(--i));
 }
 html body main .menu-container .c .column1 .menu-item1 .divUn, html body main .menu-container .c .column1 .menu-item2 .divUn, html body main .menu-container .c .column1 .menu-item3 .divUn, html body main .menu-container .c .column2 .menu-item1 .divUn, html body main .menu-container .c .column2 .menu-item2 .divUn, html body main .menu-container .c .column2 .menu-item3 .divUn, html body main .menu-container .c .column3 .menu-item1 .divUn, html body main .menu-container .c .column3 .menu-item2 .divUn, html body main .menu-container .c .column3 .menu-item3 .divUn {
   display: flex;
@@ -154,16 +158,16 @@ html body main .menu-container .c .column1 .menu-item1:hover .divDeux, html body
 }
 html body main .menu-container .c .column1 .menu-item1:hover i, html body main .menu-container .c .column1 .menu-item2:hover i, html body main .menu-container .c .column1 .menu-item3:hover i, html body main .menu-container .c .column2 .menu-item1:hover i, html body main .menu-container .c .column2 .menu-item2:hover i, html body main .menu-container .c .column2 .menu-item3:hover i, html body main .menu-container .c .column3 .menu-item1:hover i, html body main .menu-container .c .column3 .menu-item2:hover i, html body main .menu-container .c .column3 .menu-item3:hover i {
   display: block;
-  animation: apparition 0.7s 1 linear;
+  animation: apparition 0.7s 1 ease-in-out;
 }
 html body main .menu-container .c .column1 {
-  --i: 0;
+  --i: 2;
 }
 html body main .menu-container .c .column2 {
   --i: 1;
 }
 html body main .menu-container .c .column3 {
-  --i: 2;
+  --i: 0;
 }
 html body main .btn button {
   display: inline-block;
@@ -272,15 +276,8 @@ html body footer nav ul li a {
     transform: translateY(0);
   }
 }
-.chld {
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: fadeInChild 0.5s forwards;
-  animation-delay: calc(0.5s * var(--j) + 1.5s * var(--i));
-}
-
 .menu-item1__child1 {
-  --j: 0;
+  --j: 2;
 }
 
 .menu-item1__child2 {
@@ -288,11 +285,11 @@ html body footer nav ul li a {
 }
 
 .menu-item1__child3 {
-  --j: 2;
+  --j: 0;
 }
 
 .menu-item2__child1 {
-  --j: 0;
+  --j: 2;
 }
 
 .menu-item2__child2 {
@@ -300,11 +297,11 @@ html body footer nav ul li a {
 }
 
 .menu-item2__child3 {
-  --j: 2;
+  --j: 0;
 }
 
 .menu-item3__child1 {
-  --j: 0;
+  --j: 2;
 }
 
 .menu-item3__child2 {
@@ -312,7 +309,7 @@ html body footer nav ul li a {
 }
 
 .menu-item3__child3 {
-  --j: 2;
+  --j: 0;
 }
 
 .progress-container {
