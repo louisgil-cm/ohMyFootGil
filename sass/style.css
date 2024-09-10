@@ -2,6 +2,10 @@
 body {
   font-family: Arial, sans-serif;
 }
+body .text p {
+  font-size: 1.4rem;
+  font-weight: 525;
+}
 body header button {
   font-weight: 900;
   font-size: 1.2rem;
@@ -53,6 +57,9 @@ body header li .number {
 }
 body main {
   margin: 0px 0px 50px 0px;
+}
+body main .un {
+  margin: 30px 0px 20px 20px;
 }
 body main .restaurantSection__galery a {
   background-color: white;
@@ -158,6 +165,7 @@ footer h1 {
   font-style: italic;
 }
 footer nav ul {
+  padding-right: 40px;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -771,9 +779,5 @@ footer nav ul li a {
     align-items: center;
     justify-content: space-between;
     margin: 0px 5px 0px 5px;
-  }
-  body main .main__restaurantSection .restaurantSection__galery a .image .text p {
-    font-size: 1.4rem;
-    font-weight: 525;
   }
 }/*# sourceMappingURL=style.css.map */

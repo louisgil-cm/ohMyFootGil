@@ -1,5 +1,11 @@
 body{
   font-family: Arial, sans-serif;
+  .text {
+    p{
+      font-size: 1.4rem;
+      font-weight: 525;
+     }
+  }
 
 header{
   button{
@@ -59,7 +65,9 @@ header{
 }
 main{
   margin: 0px  0px 50px 0px;
-  
+  .un{
+    margin: 30px 0px 20px 20px;
+  }
   .restaurantSection__galery {
    
     a {
@@ -170,9 +178,10 @@ footer{
   padding: 10px;
   nav{
     ul{
+      padding-right: 40px;
       list-style: none;
       display: flex;
-    flex-wrap: wrap;
+      flex-wrap: wrap;
       justify-content: space-between;
       gap: 10px;
       li{
@@ -932,11 +941,6 @@ body{
             align-items: center;
             justify-content: space-between;
             margin: 0px 5px 0px 5px;
-           p{
-            font-size: 1.4rem;
-            font-weight: 525;
-           }
-
           }
         }
       }

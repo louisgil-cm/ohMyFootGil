@@ -38,7 +38,7 @@ html body main .title__section .title {
 }
 html body main .title__section .title h1 {
   font-size: 2rem;
-  margin: 20px;
+  margin: 20px 20px 20px 30px;
   font-family: "Georgia", serif;
   font-weight: bold;
   font-style: italic;
@@ -47,7 +47,7 @@ html body main .title__section .title h1 {
 }
 html body main .title__section .title i {
   font-size: 2rem;
-  margin-right: 20px;
+  margin-right: 35px;
 }
 html body main .title__section img {
   width: 100%;
@@ -56,7 +56,7 @@ html body main .title__section img {
   margin-bottom: -20px;
 }
 html body main .menu-container {
-  margin: 40px;
+  margin: 40px 50px 40px 40px;
   display: flex;
   gap: 20px;
   box-sizing: border-box;
@@ -172,7 +172,7 @@ html body main .menu-container .c .column3 {
 html body main .btn button {
   display: inline-block;
   padding: 20px;
-  font-size: 16px;
+  font-size: 1.5rem;
   color: white;
   background: linear-gradient(to right, #FF79DA, #9356DC);
   border: none;
@@ -181,10 +181,9 @@ html body main .btn button {
   text-decoration: none;
   transition-property: transform;
   width: 30%;
-  margin-left: 35%;
+  margin-left: 36%;
   margin-top: -7px;
   margin-bottom: 20px;
-  transform: scale(1);
 }
 html body main .menu {
   display: flex;
@@ -205,6 +204,7 @@ html body footer h1 {
   font-style: italic;
 }
 html body footer nav ul {
+  padding-right: 40px;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
