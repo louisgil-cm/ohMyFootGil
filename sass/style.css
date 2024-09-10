@@ -1,4 +1,63 @@
 @charset "UTF-8";
+body {
+  font-family: Arial, sans-serif;
+}
+body header button {
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 30px grey;
+}
+body header nav i {
+  font-size: 1.6rem;
+}
+body header nav .ville {
+  padding: 20px;
+  font-weight: 900;
+}
+body header li {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  padding: 20px 20px 20px 10px;
+  position: relative;
+  max-width: 100%;
+  flex-wrap: nowrap;
+}
+body header li i {
+  font-size: 18px;
+  margin-left: 10px;
+  color: #333;
+}
+body header li .number__text {
+  font-size: 16px;
+  color: #333;
+  white-space: nowrap;
+}
+body header li .number {
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  background-color: #8a2be2;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 14px;
+}
+body main {
+  margin: 0px 0px 50px 0px;
+}
+body main .restaurantSection__galery a {
+  background-color: white;
+}
+
 .heart-container {
   display: inline-block;
   font-size: 50px;
@@ -22,9 +81,7 @@
   height: 100%;
   background: linear-gradient(to top, #ff6699, #8a2be2);
   -webkit-text-fill-color: transparent;
-  /* Important pour que le texte ne soit pas visible autrement */
   background-clip: text;
-  /* Propriété standard */
   color: transparent;
   clip-path: inset(100% 0 0 0);
   transition: clip-path 0.2s ease-in-out;
@@ -33,40 +90,72 @@
   clip-path: inset(0 0 0 0);
 }
 
-#loading-screen {
+.screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #FF79DA, #9356DC); /* Couleur de fond de l'écran de chargement */
+  background: linear-gradient(to right, #FF79DA, #9356DC);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Place le loader au-dessus de tout le contenu */
+  z-index: 9999;
   opacity: 1;
-  animation: fadeOut 5s ease-in-out forwards; /* Animation pour masquer l'écran de chargement */
+  animation: fadOut 7s ease-in-out forwards;
 }
 
 .loader {
-  border: 8px solid #f3f3f3; /* Couleur des bordures du loader */
-  border-top: 8px solid #3498db; /* Couleur du loader */
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 2s linear infinite; /* Animation de rotation */
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  background: linear-gradient(90deg, #000 50%, rgba(0, 0, 0, 0) 0) right/200% 100%;
+  animation: l21 7s infinite linear;
 }
 
+.loader::before {
+  content: "WELCOME TO OHMYFOOD SITE...";
+  color: rgba(0, 0, 0, 0);
+  padding: 0 5px;
+  background: inherit;
+  background-image: linear-gradient(90deg, #fff 50%, #000 0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-align: center;
+}
+
+@keyframes l21 {
+  100% {
+    background-position: left;
+  }
+}
+@keyframes fadOut {
+  0% {
+    opacity: 1;
+    background: linear-gradient(to right, #FF79DA, #00c5c7);
+  }
+  50% {
+    opacity: 1;
+    background: linear-gradient(to right, #00c5c7, #9356DC);
+  }
+  75% {
+    opacity: 1;
+    background: linear-gradient(to right, #FF79DA, #9356DC);
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
 footer {
-  height: 25vh;
-  font-size: 1.6rem;
-  margin: 50px 0px 0px 0px;
   background-color: black;
   color: white;
   padding: 10px;
 }
 footer h1 {
   margin-left: 31px;
+  font-style: italic;
 }
 footer nav ul {
   list-style: none;
@@ -75,11 +164,14 @@ footer nav ul {
   justify-content: space-between;
   gap: 10px;
 }
+footer nav ul li {
+  font-size: 1.3rem;
+}
 footer nav ul li a {
+  font-size: 1.3rem;
   display: flex;
   gap: 10px;
   color: white;
-  font-size: 2rem;
 }
 
 @media screen and (min-width: 100px) {
@@ -111,11 +203,8 @@ footer nav ul li a {
     top: 0;
     left: 0;
     width: 30vw;
-    /* La ligne commence par occuper toute la largeur de l'écran */
     height: 2px;
-    /* Épaisseur de la ligne */
     background-color: #d3d3d3;
-    /* Couleur de la ligne */
   }
   body .header__FonctionnementReservation {
     display: flex;
@@ -142,7 +231,7 @@ footer nav ul li a {
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Reservation button {
     display: inline-block;
-    padding: 20px;
+    padding: 15px;
     font-size: 16px;
     color: white;
     background: linear-gradient(to right, #FF79DA, #9356DC);
@@ -151,13 +240,12 @@ footer nav ul li a {
     cursor: pointer;
     text-decoration: none;
     transition-property: transform;
-    width: 60%;
+    width: 70%;
     transform: scale(1);
+    box-shadow: 0px 0px 35px grey;
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement {
     width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 1, 0.1);
-    background-color: #F5F5F5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -179,37 +267,12 @@ footer nav ul li a {
     white-space: nowrap;
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li {
-    font-size: 1rem;
-    width: 100%;
-    margin-left: 50px;
     display: flex;
     gap: 10px;
-    align-items: center;
-    justify-content: center;
-    margin-right: 25%;
-    padding: 20px;
-    color: #333;
-    background-color: #f2f2f2;
-    border-radius: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 75%;
-    font-size: 25px;
+    margin-left: -50px;
   }
-  body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li .number__text {
-    text-align: center;
-  }
-  body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li .number {
-    display: flex;
-    width: 25px;
-    height: 25px;
-    margin-left: -18%;
-    background-color: #a987e7;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
+  body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li .numbertext {
+    font-size: 1.5rem;
   }
   main {
     background-color: #f2f2f2;
@@ -222,12 +285,15 @@ footer nav ul li a {
   main .main__restaurantSection .restaurantSection__galery {
     flex: 1;
     flex-wrap: wrap;
+    display: flex;
+    gap: 20px;
   }
   main .main__restaurantSection .restaurantSection__galery a {
     display: block;
     border: 1px solid #ddd;
     border-radius: 20px;
     width: 100%;
+    background-color: white;
   }
   main .main__restaurantSection .restaurantSection__galery a .image {
     position: relative;
@@ -252,7 +318,6 @@ footer nav ul li a {
     margin-top: 10px;
     left: 100%;
     color: #333;
-    /* Gris foncé pour le texte */
     font-family: Arial, sans-serif;
   }
   main .main__restaurantSection .restaurantSection__galery a .image .text {
@@ -261,26 +326,16 @@ footer nav ul li a {
     justify-content: space-between;
     margin: 0px 5px 0px 5px;
   }
-  footer {
-    margin: 50px 0px 0px 0px;
-    background-color: black;
-    color: white;
-    padding: 10px;
-  }
   footer h1 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+    font-style: italic;
   }
   footer nav ul {
-    list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
+    flex-direction: column;
   }
-  footer nav ul li a {
-    display: flex;
-    gap: 10px;
-    color: white;
+  footer nav ul li {
+    font-size: 1.3rem;
   }
 }
 @media screen and (min-width: 480px) {
@@ -312,11 +367,7 @@ footer nav ul li a {
     top: 0;
     left: 0;
     width: 30vw;
-    /* La ligne commence par occuper toute la largeur de l'écran */
-    height: 2px;
-    /* Épaisseur de la ligne */
     background-color: #d3d3d3;
-    /* Couleur de la ligne */
   }
   body .header__FonctionnementReservation {
     display: flex;
@@ -352,13 +403,11 @@ footer nav ul li a {
     cursor: pointer;
     text-decoration: none;
     transition-property: transform;
-    width: 60%;
+    width: 50%;
     transform: scale(1);
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement {
     width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 1, 0.1);
-    background-color: #F5F5F5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -368,7 +417,7 @@ footer nav ul li a {
     color: black;
     font-size: 30px;
     margin-top: 30px;
-    margin-left: -30%;
+    margin-left: 30px;
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul {
     display: flex;
@@ -380,37 +429,7 @@ footer nav ul li a {
     white-space: nowrap;
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li {
-    font-size: 1rem;
-    width: 100%;
-    margin-left: 50px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    margin-right: 25%;
-    padding: 20px;
-    color: #333;
-    background-color: #f2f2f2;
-    border-radius: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 75%;
-    font-size: 25px;
-  }
-  body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li .number__text {
-    text-align: center;
-  }
-  body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li .number {
-    display: flex;
-    width: 25px;
-    height: 25px;
-    margin-left: -18%;
-    background-color: #a987e7;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
+    margin-left: 10px;
   }
   main {
     background-color: #f2f2f2;
@@ -454,7 +473,6 @@ footer nav ul li a {
     margin-top: 10px;
     left: 100%;
     color: #333;
-    /* Gris foncé pour le texte */
     font-family: Arial, sans-serif;
   }
   main .main__restaurantSection .restaurantSection__galery a .image .text {
@@ -463,26 +481,12 @@ footer nav ul li a {
     justify-content: space-between;
     margin: 0px 5px 0px 5px;
   }
-  footer {
-    margin: 50px 0px 0px 0px;
-    background-color: black;
-    color: white;
-    padding: 10px;
-  }
-  footer h1 {
-    font-size: 1.1rem;
-  }
   footer nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
+    flex-direction: row;
+    flex: 1;
   }
-  footer nav ul li a {
-    display: flex;
-    gap: 10px;
-    color: white;
+  footer nav ul li {
+    font-size: 1.3rem;
   }
 }
 @media screen and (min-width: 760px) {
@@ -514,11 +518,8 @@ footer nav ul li a {
     top: 0;
     left: 0;
     width: 30vw;
-    /* La ligne commence par occuper toute la largeur de l'écran */
     height: 2px;
-    /* Épaisseur de la ligne */
     background-color: #d3d3d3;
-    /* Couleur de la ligne */
   }
   body .header__FonctionnementReservation {
     display: flex;
@@ -537,6 +538,7 @@ footer nav ul li a {
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Reservation h1 {
     font-size: 30px;
+    margin: none;
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Reservation p {
     margin-left: 25px;
@@ -554,25 +556,19 @@ footer nav ul li a {
     cursor: pointer;
     text-decoration: none;
     transition-property: transform;
-    width: 40%;
+    width: 30%;
     transform: scale(1);
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement {
     width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 1, 0.1);
-    background-color: #F5F5F5;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement h2 {
-    justify-content: center;
-    display: flex;
-    margin-left: 40px;
-    color: black;
-    font-size: 30px;
-    margin-top: 30px;
+    margin-left: 20px;
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul {
     display: flex;
@@ -583,35 +579,8 @@ footer nav ul li a {
     width: 95%;
     white-space: nowrap;
   }
-  body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li {
-    font-size: 1.5rem;
-    width: 40%;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    color: #333;
-    margin-left: 140px;
-    background-color: #f2f2f2;
-    border-radius: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li .number__text {
-    text-align: center;
-  }
-  body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li .number {
-    display: flex;
-    width: 25px;
-    height: 25px;
-    margin-left: -45px;
-    background-color: #a987e7;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
+  body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul i .numbertext {
+    font-size: 1.7rem;
   }
   main {
     background-color: #f2f2f2;
@@ -655,7 +624,6 @@ footer nav ul li a {
     margin-top: 10px;
     left: 100%;
     color: #333;
-    /* Gris foncé pour le texte */
     font-family: Arial, sans-serif;
   }
   main .main__restaurantSection .restaurantSection__galery a .image .text {
@@ -663,27 +631,6 @@ footer nav ul li a {
     align-items: center;
     justify-content: space-between;
     margin: 0px 5px 0px 5px;
-  }
-  footer {
-    margin: 50px 0px 0px 0px;
-    background-color: black;
-    color: white;
-    padding: 10px;
-  }
-  footer h1 {
-    font-size: 1.1rem;
-  }
-  footer nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  footer nav ul li a {
-    display: flex;
-    gap: 10px;
-    color: white;
   }
 }
 @media screen and (min-width: 992px) {
@@ -705,7 +652,10 @@ footer nav ul li a {
     background-color: #e6e6e6;
     border-top: 2px solid black;
   }
-  body header nav .header__nav__choixVille .ville {
+  body header nav .header__nav__choixVille .ville i {
+    font-size: 30px;
+  }
+  body header nav .header__nav__choixVille .ville p {
     display: flex;
     font-size: 30px;
   }
@@ -714,9 +664,9 @@ footer nav ul li a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 30vw; /* La ligne commence par occuper toute la largeur de l'écran */
-    height: 2px; /* Épaisseur de la ligne */
-    background-color: #d3d3d3; /* Couleur de la ligne */
+    width: 30vw;
+    height: 2px;
+    background-color: #d3d3d3;
   }
   body .header__FonctionnementReservation {
     display: flex;
@@ -752,49 +702,23 @@ footer nav ul li a {
   body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement {
     width: 50%;
     height: 60vh;
-    box-shadow: 0 2px 4px rgba(0, 0, 1, 0.1);
     background-color: #F5F5F5;
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement h2 {
     color: black;
     font-size: 30px;
-    margin-top: 30px;
+    margin-top: 0px;
     margin-right: 230px;
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul {
     display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 10px;
     flex-direction: column;
     width: 90%;
     white-space: nowrap;
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    color: #333;
-    background-color: #f2f2f2;
-    border-radius: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 50%;
-    font-size: 25px;
-  }
-  body .header__FonctionnementReservation .header__FonctionnementReservation__Fonctionnement ul li .number {
-    display: flex;
-    width: 25px;
-    height: 25px;
-    margin-left: -60px;
-    background-color: #a987e7;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
+    box-shadow: 0px 0px 35px #e6e6e6;
   }
   body main {
     background-color: #f2f2f2;
@@ -848,51 +772,8 @@ footer nav ul li a {
     justify-content: space-between;
     margin: 0px 5px 0px 5px;
   }
-  body footer {
-    margin: 50px 0px 0px 0px;
-    background-color: black;
-    color: white;
-    padding: 10px;
+  body main .main__restaurantSection .restaurantSection__galery a .image .text p {
+    font-size: 1.4rem;
+    font-weight: 525;
   }
-  body footer nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  body footer nav ul li a {
-    display: flex;
-    gap: 10px;
-    color: white;
-  }
-}
-/* Animation pour le loader */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/* Animation pour masquer l'écran de chargement */
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  } /* Masquer complètement après l'animation */
-}
-/* Animation pour faire apparaître le contenu */
-@keyframes showContent {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    display: block;
-  } /* Afficher complètement après l'animation */
 }/*# sourceMappingURL=style.css.map */

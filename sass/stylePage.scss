@@ -11,12 +11,13 @@ html{
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 20px 0px 20px 0px;
             gap: 20px;
             a{
                 i{
                     font-size: 2rem;
                     position: absolute;
-                    left: 0.5%;
+                    left: 5%;
                     top: 1.7%;
                 }
             }
@@ -33,7 +34,7 @@ html{
                 border-top-right-radius: 30px;
                 border-top-left-radius: 30px;
                 background-color:#e6e6e6;
-                z-index: 9999;
+                z-index: 99;
                 position: relative;
                
                 h1{
@@ -61,7 +62,7 @@ html{
             }
             }
             .menu-container{
-                margin: 30px;
+                margin: 40px;
                 display: flex;
                 gap: 20px;
                 box-sizing: border-box;
@@ -80,36 +81,25 @@ html{
                         position: absolute;
                         left: 0;
                         bottom: -0.2em;
-                        /* Ajuster cette valeur pour positionner la ligne correctement */
                         width: 40%;
-                        height: 0.06em;
-                        /* Épaisseur de la ligne */
-                        background-color: #00c5c7;
-                        /* Couleur de la ligne */
-                        transform: scaleX(1);
-                        /* La ligne est toujours visible */
-                        transform-origin: bottom left;
+                        height: 0.12em;
+                        background-color:#99E2D0;
                     }
-                    h2:hover::after {
-                        transform: scaleX(1);
-                        transform-origin: bottom left;
-                    }
-                    .column{
+                    .column1,.column2,.column3 {
                         display: flex;
                         flex-direction: column;
                         gap: 20px;
-                        flex: 1; /* Chaque colonne occupe une part égale de la largeur */
-                        .menu-item{
+                        flex: 1; 
+                        animation: fadeInColumn 0.5s forwards;
+                        animation-delay: calc(0.5s * 3 * var(--i)); 
+                        .menu-item1, .menu-item2, .menu-item3{
                             display: flex;
                             justify-content: space-between;
-                            background-color: #F2F2F2;
+                            background-color: #f2f2f2;
                             border-radius: 10px;
                             width: 100%;
-                             padding-left: 10px;
-                            
-                            transform: translateY(-20px);
-                            animation: fadeInUp 0.9s forwards;
-                            flex: 1; /* Chaque ligne occupe une part égale de la hauteur */
+                            padding-left: 10px;
+                            flex: 1; 
                             .divUn{
                                 display: flex;
                                 flex-direction: column;
@@ -145,42 +135,50 @@ html{
                                 }
                             }
                             .divDeux{
-                                 display: none;
-                                 background-color:#00c5c7;
-                                width: 17%;
-                                // display: flex;
+                                display: none;
+                                position: relative;
+                                background-color:#99E2D0;
                                 align-items: center;
                                 justify-content: center;
                                 border-top-right-radius: 10px;
                                 border-bottom-right-radius: 10px;
+                                width: 20%;
                                 i{
                                     position: absolute;
-                                    top: 40%;
-                                    left: 91%;
+                                    left: 30%;
+                                    top: 35%;
                                     display: flex;
+                                    font-size: 1.7rem;
+                                    display :none;
                                     color: white;
-                                    display: none;
+                                   
                                 }
                             }
                             &:hover .divDeux {
                                 display: block;
                                 animation-name: fillWidth;
                                 animation-duration: 0.7s;
-
+                                animation-timing-function: ease-in-out;
                             }
                             &:hover i{
                                 display: block;
-                                animation-name: apparition;
-                                animation-duration: 0.7s;
-
+                               animation: apparition 0.7s 1 linear;
                             }
                           
-                           
+
                         }
-                        
-                    
-                           
+                         
                     }
+                    .column1{
+                      --i: 0;
+                    }
+                    .column2{
+                      --i: 1;
+                    }
+                    .column3{
+                      --i: 2;
+                    }
+
                 }
             }
             .btn{
@@ -202,97 +200,48 @@ html{
                 transform: scale(1);
                }
             }
-
-
             .menu {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 20px;
                 justify-content: center;
                 align-items: center;
-
             }
             
         }
         footer{
-            h1{
-                font-size: 1.1rem;
-            }
-            // margin: 20px  0px 0px 0px;
-            background-color: black;
-            color: white;
-            padding: 10px;
-            nav{
-              ul{
-                display: flex;
-                flex-wrap: wrap;
-                list-style: none;
-                display: flex;
-                justify-content: space-between;
-                gap: 10px;
-                li{
-                  a{
-                    display: flex;
-                    gap: 10px;
-                    color: white;
-                  }
+
+          h1{
+            margin-left: 31px;
+            font-size: 1.4rem;
+            font-style: italic;        
+          }
+          margin: 50px  0px 0px 0px;
+          background-color: black;
+          color: white;
+          padding: 10px;
+          nav{
+            ul{
+              list-style: none;
+              display: flex;
+            flex-wrap: wrap;
+              justify-content: space-between;
+              gap: 10px;
+              li{
+                font-size: 1.3rem;
+                a{
+                  font-size: 1.3rem;
+                  display: flex;
+                  gap: 10px;
+                  color: white;
                 }
               }
             }
           }
+        }
         
     }
 }
-
-
-
-/* Première colonne */
-.column:nth-child(1) .menu-item:nth-child(1) {
-    animation-delay: 0.10s;
-}
-
-.column:nth-child(1) .menu-item:nth-child(2) {
-    animation-delay: 0.20s;
-}
-
-.column:nth-child(1) .menu-item:nth-child(3) {
-    animation-delay: 0.30s;
-}
-
-/* Deuxième colonne */
-.column:nth-child(2) .menu-item:nth-child(1) {
-    animation-delay: 0.4s;
-}
-
-.column:nth-child(2) .menu-item:nth-child(2) {
-    animation-delay: 0.5s;
-}
-
-.column:nth-child(2) .menu-item:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-/* Troisième colonne */
-.column:nth-child(3) .menu-item:nth-child(1) {
-    animation-delay: 0.7s;
-}
-
-.column:nth-child(3) .menu-item:nth-child(2) {
-    animation-delay: 0.8s;
-}
-
-.column:nth-child(3) .menu-item:nth-child(3) {
-    animation-delay: 0.9s;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
 
 .heart-container {
     display: inline-block;
@@ -301,7 +250,7 @@ html{
   
   
     .fa-heart {
-      color: #2e2c2c; // Couleur par défaut du cœur
+      color: #2e2c2c;
       position: relative;
       display: inline-block;
       font-size: 35px;
@@ -309,55 +258,98 @@ html{
   
   
       &:after {
-        content: '\f004'; // Code Unicode pour l'icône cœur plein
-        font-family: "Font Awesome 5 Free"; // Assurez-vous d'utiliser Font Awesome
+        content: '\f004'; 
+        font-family: "Font Awesome 5 Free"; 
         font-weight: 900;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to top, #ff6699, #8a2be2); // Dégradé du violet au rose
+        background: linear-gradient(to top, #ff6699, #8a2be2);
         -webkit-text-fill-color: transparent;
-        /* Important pour que le texte ne soit pas visible autrement */
         background-clip: text;
-        /* Propriété standard */
         color: transparent;
         clip-path: inset(100% 0 0 0);
         transition: clip-path 0.1s ease-in-out;
       }
     }
   
-  
     &:hover .fa-heart:after {
-      clip-path: inset(0 0 0 0); // Remplir le cœur au survol avec le dégradé
+      clip-path: inset(0 0 0 0);
     }
   }
   @media only screen and (max-width:1075px) {
   .menu-container{
     flex-direction: column;
   }
-  }
-
-
-  @keyframes apparition{
-    0%{
-       transform:translateX(100) ;
-    }
-    50%{
-        transform:translateX(75%);
-    }
-    75%{
-        transform:translateX(50%);
-    }
+  footer{
    
-    100%{
-    transform: transform(25%);
-
-    
+    nav{
+      ul{
+        flex-direction: row;
+        flex: 1;
+        li{
+          font-size: 1.3rem;
+        }
+      }
     }
   }
 
+  }
+
+  
+@keyframes fadeInColumn {
+  to {
+    opacity: 1;
+  }
+}
+  @keyframes fadeInChild {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  } 
+
+.chld{
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInChild 0.5s forwards;
+
+  animation-delay: calc(0.5s * var(--j) + 0.5s * 3 * var(--i));
+}
+
+   .menu-item1__child1{
+    --j: 0;
+   }
+  .menu-item1__child2{
+    --j: 1;
+  }
+  .menu-item1__child3{
+    --j: 2;
+  }
+
+
+  .menu-item2__child1{
+    --j: 0;
+  }
+  .menu-item2__child2{
+    --j: 1;
+  }
+  .menu-item2__child3{
+    --j: 2;
+  }
+
+
+  .menu-item3__child1{
+    --j: 0;
+  }
+  .menu-item3__child2{
+    --j: 1;
+  }
+  .menu-item3__child3{
+    --j: 2;
+  }
 
 
   .progress-container {
@@ -367,7 +359,7 @@ html{
     width: 10%;
     border-radius: 8px;
     overflow: hidden;
-    height: 100px; /* Hauteur de la div */
+    height: 100px;
     position: relative;
 }
 
@@ -381,7 +373,7 @@ html{
     background-color: #76c7c0;
     border-radius: 8px;
     position: absolute;
-    right: 0; /* Démarre à droite */
+    right: 0;
     animation: fillWidth 2s forwards;
     animation-timing-function: ease-in-out;
 }
@@ -392,32 +384,89 @@ html{
         width: 0;
     }
     to {
-        width:17%;
+        width:20%;
     }
 }
-@keyframes apparition{
+@keyframes fillWidt {
     from {
-        transform:translateX(100% ) rotatex(90deg) ;
+        width: 0;
     }
     to {
-        transform:translateX(0) rotatex(0) ;
+        width:10%;
+    }
+}
+
+@keyframes apparition{
+    0%{
+      transform:translate(-60%) rotate(0deg) ;
+  
+    }
+    100%{
+        transform:translate(0%) rotate(360deg);
     }
 }
 
 
+
+// loader
+
+
+
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    background: linear-gradient(to right, #FF79DA, #9356DC);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    animation: fadeOut 5s ease-in-out forwards; 
+  }
+  
+  .loader {
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #3498db; 
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+  }
+  
+  
+
+  @media only screen and (max-width:480px) {
+    .menu-container{
+      flex-direction: column;
+    }
+    button{
+      width: 60% !important;
+      margin-left: 80px !important;
+    }
+    footer{
+      ul{
+        display: flex;
+        flex-direction: column !important;
+      }
+    }
+    }
 
 
 
 
   
-
-
-
-
-
-
-                            
-
-
-
-

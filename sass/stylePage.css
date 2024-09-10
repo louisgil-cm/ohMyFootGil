@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   font-family: Arial, sans-serif;
 }
@@ -14,12 +13,13 @@ html body header {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px 0px 20px 0px;
   gap: 20px;
 }
 html body header a i {
   font-size: 2rem;
   position: absolute;
-  left: 0.5%;
+  left: 5%;
   top: 1.7%;
 }
 html body main {
@@ -33,7 +33,7 @@ html body main .title__section .title {
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   background-color: #e6e6e6;
-  z-index: 9999;
+  z-index: 99;
   position: relative;
 }
 html body main .title__section .title h1 {
@@ -56,7 +56,7 @@ html body main .title__section img {
   margin-bottom: -20px;
 }
 html body main .menu-container {
-  margin: 30px;
+  margin: 40px;
   display: flex;
   gap: 20px;
   box-sizing: border-box;
@@ -75,50 +75,40 @@ html body main .menu-container .c h2::after {
   position: absolute;
   left: 0;
   bottom: -0.2em;
-  /* Ajuster cette valeur pour positionner la ligne correctement */
   width: 40%;
-  height: 0.06em;
-  /* Épaisseur de la ligne */
-  background-color: #00c5c7;
-  /* Couleur de la ligne */
-  transform: scaleX(1);
-  /* La ligne est toujours visible */
-  transform-origin: bottom left;
+  height: 0.12em;
+  background-color: #99E2D0;
 }
-html body main .menu-container .c h2:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-html body main .menu-container .c .column {
+html body main .menu-container .c .column1, html body main .menu-container .c .column2, html body main .menu-container .c .column3 {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  flex: 1; /* Chaque colonne occupe une part égale de la largeur */
+  flex: 1;
+  animation: fadeInColumn 0.5s forwards;
+  animation-delay: calc(1.5s * var(--i));
 }
-html body main .menu-container .c .column .menu-item {
+html body main .menu-container .c .column1 .menu-item1, html body main .menu-container .c .column1 .menu-item2, html body main .menu-container .c .column1 .menu-item3, html body main .menu-container .c .column2 .menu-item1, html body main .menu-container .c .column2 .menu-item2, html body main .menu-container .c .column2 .menu-item3, html body main .menu-container .c .column3 .menu-item1, html body main .menu-container .c .column3 .menu-item2, html body main .menu-container .c .column3 .menu-item3 {
   display: flex;
   justify-content: space-between;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   border-radius: 10px;
   width: 100%;
   padding-left: 10px;
-  transform: translateY(-20px);
-  animation: fadeInUp 0.9s forwards;
-  flex: 1; /* Chaque ligne occupe une part égale de la hauteur */
+  flex: 1;
 }
-html body main .menu-container .c .column .menu-item .divUn {
+html body main .menu-container .c .column1 .menu-item1 .divUn, html body main .menu-container .c .column1 .menu-item2 .divUn, html body main .menu-container .c .column1 .menu-item3 .divUn, html body main .menu-container .c .column2 .menu-item1 .divUn, html body main .menu-container .c .column2 .menu-item2 .divUn, html body main .menu-container .c .column2 .menu-item3 .divUn, html body main .menu-container .c .column3 .menu-item1 .divUn, html body main .menu-container .c .column3 .menu-item2 .divUn, html body main .menu-container .c .column3 .menu-item3 .divUn {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-html body main .menu-container .c .column .menu-item .divUn h3 {
+html body main .menu-container .c .column1 .menu-item1 .divUn h3, html body main .menu-container .c .column1 .menu-item2 .divUn h3, html body main .menu-container .c .column1 .menu-item3 .divUn h3, html body main .menu-container .c .column2 .menu-item1 .divUn h3, html body main .menu-container .c .column2 .menu-item2 .divUn h3, html body main .menu-container .c .column2 .menu-item3 .divUn h3, html body main .menu-container .c .column3 .menu-item1 .divUn h3, html body main .menu-container .c .column3 .menu-item2 .divUn h3, html body main .menu-container .c .column3 .menu-item3 .divUn h3 {
   margin-top: 7px;
   width: 60%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-html body main .menu-container .c .column .menu-item .divUn .icone {
+html body main .menu-container .c .column1 .menu-item1 .divUn .icone, html body main .menu-container .c .column1 .menu-item2 .divUn .icone, html body main .menu-container .c .column1 .menu-item3 .divUn .icone, html body main .menu-container .c .column2 .menu-item1 .divUn .icone, html body main .menu-container .c .column2 .menu-item2 .divUn .icone, html body main .menu-container .c .column2 .menu-item3 .divUn .icone, html body main .menu-container .c .column3 .menu-item1 .divUn .icone, html body main .menu-container .c .column3 .menu-item2 .divUn .icone, html body main .menu-container .c .column3 .menu-item3 .divUn .icone {
   display: flex;
   justify-content: space-between;
   width: 98%;
@@ -127,42 +117,53 @@ html body main .menu-container .c .column .menu-item .divUn .icone {
   text-overflow: ellipsis;
   padding-bottom: 10px;
 }
-html body main .menu-container .c .column .menu-item .divUn .icone span {
+html body main .menu-container .c .column1 .menu-item1 .divUn .icone span, html body main .menu-container .c .column1 .menu-item2 .divUn .icone span, html body main .menu-container .c .column1 .menu-item3 .divUn .icone span, html body main .menu-container .c .column2 .menu-item1 .divUn .icone span, html body main .menu-container .c .column2 .menu-item2 .divUn .icone span, html body main .menu-container .c .column2 .menu-item3 .divUn .icone span, html body main .menu-container .c .column3 .menu-item1 .divUn .icone span, html body main .menu-container .c .column3 .menu-item2 .divUn .icone span, html body main .menu-container .c .column3 .menu-item3 .divUn .icone span {
   font-weight: 100;
   width: 30%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-html body main .menu-container .c .column .menu-item .divUn .icone strong {
+html body main .menu-container .c .column1 .menu-item1 .divUn .icone strong, html body main .menu-container .c .column1 .menu-item2 .divUn .icone strong, html body main .menu-container .c .column1 .menu-item3 .divUn .icone strong, html body main .menu-container .c .column2 .menu-item1 .divUn .icone strong, html body main .menu-container .c .column2 .menu-item2 .divUn .icone strong, html body main .menu-container .c .column2 .menu-item3 .divUn .icone strong, html body main .menu-container .c .column3 .menu-item1 .divUn .icone strong, html body main .menu-container .c .column3 .menu-item2 .divUn .icone strong, html body main .menu-container .c .column3 .menu-item3 .divUn .icone strong {
   font-weight: 100;
 }
-html body main .menu-container .c .column .menu-item .divDeux {
+html body main .menu-container .c .column1 .menu-item1 .divDeux, html body main .menu-container .c .column1 .menu-item2 .divDeux, html body main .menu-container .c .column1 .menu-item3 .divDeux, html body main .menu-container .c .column2 .menu-item1 .divDeux, html body main .menu-container .c .column2 .menu-item2 .divDeux, html body main .menu-container .c .column2 .menu-item3 .divDeux, html body main .menu-container .c .column3 .menu-item1 .divDeux, html body main .menu-container .c .column3 .menu-item2 .divDeux, html body main .menu-container .c .column3 .menu-item3 .divDeux {
   display: none;
-  background-color: #00c5c7;
-  width: 17%;
+  position: relative;
+  background-color: #99E2D0;
   align-items: center;
   justify-content: center;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  width: 20%;
 }
-html body main .menu-container .c .column .menu-item .divDeux i {
+html body main .menu-container .c .column1 .menu-item1 .divDeux i, html body main .menu-container .c .column1 .menu-item2 .divDeux i, html body main .menu-container .c .column1 .menu-item3 .divDeux i, html body main .menu-container .c .column2 .menu-item1 .divDeux i, html body main .menu-container .c .column2 .menu-item2 .divDeux i, html body main .menu-container .c .column2 .menu-item3 .divDeux i, html body main .menu-container .c .column3 .menu-item1 .divDeux i, html body main .menu-container .c .column3 .menu-item2 .divDeux i, html body main .menu-container .c .column3 .menu-item3 .divDeux i {
   position: absolute;
-  top: 40%;
-  left: 91%;
+  left: 30%;
+  top: 35%;
   display: flex;
-  color: white;
+  font-size: 1.7rem;
   display: none;
+  color: white;
 }
-html body main .menu-container .c .column .menu-item:hover .divDeux {
+html body main .menu-container .c .column1 .menu-item1:hover .divDeux, html body main .menu-container .c .column1 .menu-item2:hover .divDeux, html body main .menu-container .c .column1 .menu-item3:hover .divDeux, html body main .menu-container .c .column2 .menu-item1:hover .divDeux, html body main .menu-container .c .column2 .menu-item2:hover .divDeux, html body main .menu-container .c .column2 .menu-item3:hover .divDeux, html body main .menu-container .c .column3 .menu-item1:hover .divDeux, html body main .menu-container .c .column3 .menu-item2:hover .divDeux, html body main .menu-container .c .column3 .menu-item3:hover .divDeux {
   display: block;
   animation-name: fillWidth;
   animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
 }
-html body main .menu-container .c .column .menu-item:hover i {
+html body main .menu-container .c .column1 .menu-item1:hover i, html body main .menu-container .c .column1 .menu-item2:hover i, html body main .menu-container .c .column1 .menu-item3:hover i, html body main .menu-container .c .column2 .menu-item1:hover i, html body main .menu-container .c .column2 .menu-item2:hover i, html body main .menu-container .c .column2 .menu-item3:hover i, html body main .menu-container .c .column3 .menu-item1:hover i, html body main .menu-container .c .column3 .menu-item2:hover i, html body main .menu-container .c .column3 .menu-item3:hover i {
   display: block;
-  animation-name: apparition;
-  animation-duration: 0.7s;
+  animation: apparition 0.7s 1 linear;
+}
+html body main .menu-container .c .column1 {
+  --i: 0;
+}
+html body main .menu-container .c .column2 {
+  --i: 1;
+}
+html body main .menu-container .c .column3 {
+  --i: 2;
 }
 html body main .btn button {
   display: inline-block;
@@ -189,72 +190,33 @@ html body main .menu {
   align-items: center;
 }
 html body footer {
+  margin: 50px 0px 0px 0px;
   background-color: black;
   color: white;
   padding: 10px;
 }
 html body footer h1 {
-  font-size: 1.1rem;
+  margin-left: 31px;
+  font-size: 1.4rem;
+  font-style: italic;
 }
 html body footer nav ul {
-  display: flex;
-  flex-wrap: wrap;
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px;
 }
+html body footer nav ul li {
+  font-size: 1.3rem;
+}
 html body footer nav ul li a {
+  font-size: 1.3rem;
   display: flex;
   gap: 10px;
   color: white;
 }
 
-/* Première colonne */
-.column:nth-child(1) .menu-item:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.column:nth-child(1) .menu-item:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.column:nth-child(1) .menu-item:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-/* Deuxième colonne */
-.column:nth-child(2) .menu-item:nth-child(1) {
-  animation-delay: 0.4s;
-}
-
-.column:nth-child(2) .menu-item:nth-child(2) {
-  animation-delay: 0.5s;
-}
-
-.column:nth-child(2) .menu-item:nth-child(3) {
-  animation-delay: 0.6s;
-}
-
-/* Troisième colonne */
-.column:nth-child(3) .menu-item:nth-child(1) {
-  animation-delay: 0.7s;
-}
-
-.column:nth-child(3) .menu-item:nth-child(2) {
-  animation-delay: 0.8s;
-}
-
-.column:nth-child(3) .menu-item:nth-child(3) {
-  animation-delay: 0.9s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .heart-container {
   display: inline-block;
   font-size: 50px;
@@ -278,9 +240,7 @@ html body footer nav ul li a {
   height: 100%;
   background: linear-gradient(to top, #ff6699, #8a2be2);
   -webkit-text-fill-color: transparent;
-  /* Important pour que le texte ne soit pas visible autrement */
   background-clip: text;
-  /* Propriété standard */
   color: transparent;
   clip-path: inset(100% 0 0 0);
   transition: clip-path 0.1s ease-in-out;
@@ -293,21 +253,68 @@ html body footer nav ul li a {
   .menu-container {
     flex-direction: column;
   }
-}
-@keyframes apparition {
-  0% {
-    transform: translateX(100);
+  footer nav ul {
+    flex-direction: row;
+    flex: 1;
   }
-  50% {
-    transform: translateX(75%);
-  }
-  75% {
-    transform: translateX(50%);
-  }
-  100% {
-    transform: transform(25%);
+  footer nav ul li {
+    font-size: 1.3rem;
   }
 }
+@keyframes fadeInColumn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInChild {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.chld {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInChild 0.5s forwards;
+  animation-delay: calc(0.5s * var(--j) + 1.5s * var(--i));
+}
+
+.menu-item1__child1 {
+  --j: 0;
+}
+
+.menu-item1__child2 {
+  --j: 1;
+}
+
+.menu-item1__child3 {
+  --j: 2;
+}
+
+.menu-item2__child1 {
+  --j: 0;
+}
+
+.menu-item2__child2 {
+  --j: 1;
+}
+
+.menu-item2__child3 {
+  --j: 2;
+}
+
+.menu-item3__child1 {
+  --j: 0;
+}
+
+.menu-item3__child2 {
+  --j: 1;
+}
+
+.menu-item3__child3 {
+  --j: 2;
+}
+
 .progress-container {
   display: flex;
   align-items: center;
@@ -315,7 +322,7 @@ html body footer nav ul li a {
   width: 10%;
   border-radius: 8px;
   overflow: hidden;
-  height: 100px; /* Hauteur de la div */
+  height: 100px;
   position: relative;
 }
 
@@ -328,7 +335,7 @@ html body footer nav ul li a {
   background-color: #76c7c0;
   border-radius: 8px;
   position: absolute;
-  right: 0; /* Démarre à droite */
+  right: 0;
   animation: fillWidth 2s forwards;
   animation-timing-function: ease-in-out;
 }
@@ -338,14 +345,76 @@ html body footer nav ul li a {
     width: 0;
   }
   to {
-    width: 17%;
+    width: 20%;
+  }
+}
+@keyframes fillWidt {
+  from {
+    width: 0;
+  }
+  to {
+    width: 10%;
   }
 }
 @keyframes apparition {
-  from {
-    transform: translateX(100%) rotatex(90deg);
+  0% {
+    transform: translate(-60%) rotate(0deg);
   }
-  to {
-    transform: translateX(0) rotatex(0);
+  100% {
+    transform: translate(0%) rotate(360deg);
+  }
+}
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  background: linear-gradient(to right, #FF79DA, #9356DC);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  animation: fadeOut 5s ease-in-out forwards;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .menu-container {
+    flex-direction: column;
+  }
+  button {
+    width: 60% !important;
+    margin-left: 80px !important;
+  }
+  footer ul {
+    display: flex;
+    flex-direction: column !important;
   }
 }/*# sourceMappingURL=stylePage.css.map */
