@@ -26,7 +26,7 @@ body header li {
   border-radius: 20px;
   padding: 20px 20px 20px 10px;
   position: relative;
-  max-width: 100%;
+  width: 290px;
   flex-wrap: nowrap;
 }
 body header li i {
@@ -203,7 +203,7 @@ footer nav ul li a {
   }
   body header nav .header__nav__choixVille .ville {
     display: flex;
-    font-size: 30px;
+    font-size: 20px;
   }
   body header nav .header__nav__choixVille h1::after {
     content: "";
@@ -234,7 +234,7 @@ footer nav ul li a {
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Reservation p {
     margin-left: 25px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     text-align: center;
   }
   body .header__FonctionnementReservation .header__FonctionnementReservation__Reservation button {
@@ -333,6 +333,9 @@ footer nav ul li a {
     align-items: center;
     justify-content: space-between;
     margin: 0px 5px 0px 5px;
+  }
+  main .main__restaurantSection .restaurantSection__galery a .image .text h2 {
+    font-size: 1.5rem;
   }
   footer h1 {
     font-size: 1.4rem;
